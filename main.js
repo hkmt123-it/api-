@@ -4,18 +4,18 @@ function createCard(product) {
     return `
     <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-300">
 
-                    <!-- IMAGE -->
+        
                     <div class="relative">
 
                         <img src="${product.thumbnail}"
                             alt="" class="w-full h-[260px] object-cover" />
 
-                        <!-- DISCOUNT -->
+            
                         <span class="absolute top-4 left-4 bg-red-500 text-white text-sm px-3 py-1 rounded-full">
                             -${product.discountPercentage.toFixed()}%
                         </span>
 
-                        <!-- FAVORITE -->
+                    
                         <button
                             class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white shadow flex items-center justify-center">
 
@@ -25,10 +25,10 @@ function createCard(product) {
 
                     </div>
 
-                    <!-- CONTENT -->
+
                     <div class="p-5">
 
-                        <!-- CATEGORY -->
+                
                         <div class="flex items-center justify-between mb-3">
 
                             <p class="text-sm text-orange-500 font-medium capitalize">
@@ -41,17 +41,17 @@ function createCard(product) {
 
                         </div>
 
-                        <!-- TITLE -->
+            
                         <h3 class="text-2xl font-bold mb-3 line-clamp-1">
                             ${product.title}
                         </h3>
 
-                        <!-- DESCRIPTION -->
+                    
                         <p class="text-gray-500 text-sm leading-6 mb-5 line-clamp-3">
                             ${product.description}
                         </p>
 
-                        <!-- RATING -->
+        
                         <div class="flex items-center justify-between mb-5">
 
                             <div class="flex items-center gap-2">
@@ -69,7 +69,7 @@ function createCard(product) {
 
                         </div>
 
-                        <!-- BRAND -->
+                
                         <div class="flex items-center gap-2 mb-5">
 
                             <i class="fa-solid fa-tag text-orange-500"></i>
@@ -83,10 +83,10 @@ function createCard(product) {
 
                         </div>
 
-                        <!-- PRICE + BUTTON -->
+            
                         <div class="flex items-center justify-between">
 
-                            <!-- PRICE -->
+                
                             <div>
 
                                 <p class="text-gray-400 text-sm">
@@ -103,7 +103,7 @@ function createCard(product) {
 
                             </div>
 
-                            <!-- ADD BUTTON -->
+                    
                             <button
                                 class="bg-orange-500 hover:bg-orange-600 text-white px-5 py-3 rounded-2xl transition addBtns">
 
@@ -189,7 +189,7 @@ function renderStars(rating) {
     return stars
 }
 
-// ELEMENTS
+
 const cartBtn = document.querySelector(".cartBtn")
 
 const cartSidebar = document.getElementById("cartSidebar")
@@ -197,7 +197,6 @@ const cartSidebar = document.getElementById("cartSidebar")
 const closeCart = document.getElementById("closeCart")
 
 
-// OPEN SIDEBAR
 cartBtn.addEventListener("click", () => {
 
     cartSidebar.classList.remove("translate-x-[-100%]")
@@ -205,7 +204,6 @@ cartBtn.addEventListener("click", () => {
 })
 
 
-// CLOSE SIDEBAR
 closeCart.addEventListener("click", () => {
 
     cartSidebar.classList.add("translate-x-[-100%]")

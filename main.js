@@ -2,7 +2,7 @@ const productsContainer = document.querySelector(".container")
 
 function createCard(product) {
     return `
-    <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-300">
+    <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:scale-[1.03] transition duration-300">
 
         
                     <div class="relative">

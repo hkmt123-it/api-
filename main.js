@@ -277,3 +277,23 @@ function renderCart() {
 }
 
 renderCart()
+
+
+const searchInput = document.getElementById("searchInput")
+
+searchInput.addEventListener("input", () => {
+
+    const value = searchInput.value.toLowerCase()
+
+    const filtered = allProducts.filter(product =>
+        product.title.toLowerCase().includes(value)
+    )
+
+    productsContainer.innerHTML = ""
+
+    filtered.forEach(product => {
+        productsContainer.innerHTML += createCard(product)
+    })
+
+    attachAddToCartListeners()
+})

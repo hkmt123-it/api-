@@ -9,13 +9,13 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
 </head>
 
 <body class="bg-gray-100">
 
-    <!-- CONTAINER -->
-    <section class=" max-w-[1400px] mx-auto px-4 py-6">
+    <section class="max-w-[1400px] mx-auto px-4 py-6">
 
         <!-- NAVBAR -->
         <header class="bg-white rounded-3xl shadow-sm px-6 py-4 mb-8">
@@ -26,18 +26,18 @@
                 <div class="flex items-center gap-3">
 
                     <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center">
+
                         <div class="w-14 h-14 rounded-2xl overflow-hidden">
 
                             <img src="https://static.vecteezy.com/system/resources/thumbnails/055/607/316/small/temu-app-icon-on-transparent-background-free-png.png"
                                 alt="Temu Logo" class="w-full h-full object-cover" />
 
                         </div>
+
                     </div>
 
                     <div>
-                        <h1 class="text-3xl font-bold">
-                            TEMU
-                        </h1>
+                        <h1 class="text-3xl font-bold">TEMU</h1>
 
                         <p class="text-gray-500 text-sm">
                             Spend Like a Billionaire
@@ -52,19 +52,19 @@
                     <input id="searchInput" type="text" placeholder="Discover"
                         class="w-full border border-gray-300 rounded-2xl py-3 pl-12 pr-4 outline-none focus:border-orange-500 bg-gray-50" />
 
-                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    <i
+                        class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
 
                 </div>
 
-                <!-- CART BUTTON with badge -->
+                <!-- CART -->
                 <button
                     class="cartBtn relative bg-orange-500 hover:bg-orange-600 text-white px-5 py-3 rounded-2xl transition">
 
                     <i class="fa-solid fa-cart-shopping text-lg"></i>
 
-                    <!-- Badge -->
                     <span id="cartBadge"
-                        class="hidden absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                        class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center hidden">
                         0
                     </span>
 
@@ -74,80 +74,82 @@
 
         </header>
 
+        <!-- LOADING -->
+        <div id="loading" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+
+            <div class="flex flex-col items-center gap-4">
+
+                <div
+                    class="w-16 h-16 border-4 border-orange-200 border-t-orange-500 rounded-full animate-spin">
+                </div>
+
+                <p class="text-gray-600 text-lg font-medium">
+                    Loading...
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- CATEGORIES -->
+        <div id="categories"
+            class="flex gap-4 overflow-x-auto mb-10 scrollbar-hide pb-2"></div>
+
         <!-- PRODUCTS -->
-        <main>
-            <!-- LOADING -->
-            <div id="loading" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+        <div class="container grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
 
-                <div class="flex flex-col items-center gap-4">
+        <!-- PAGINATION -->
+        <div id="pagination" class="flex justify-center gap-3 mt-10 flex-wrap"></div>
 
-                    <!-- SPINNER -->
-                    <div class="w-16 h-16 border-4 border-orange-200 border-t-orange-500 rounded-full animate-spin">
-                    </div>
+        <!-- CART SIDEBAR -->
+        <div id="cartSidebar"
+            class="fixed top-0 left-0 w-[350px] h-screen bg-white shadow-2xl z-50 translate-x-[-100%] transition duration-300 flex flex-col">
 
-                    <!-- TEXT -->
-                    <p class="text-gray-600 text-lg font-medium">
-                        Loading...
+            <!-- HEADER -->
+            <div class="flex items-center justify-between p-5 border-b">
+
+                <h2 class="text-3xl font-bold">
+                    Cart
+                </h2>
+
+                <button id="closeCart"
+                    class="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 transition flex items-center justify-center">
+
+                    <i class="fa-solid fa-xmark text-xl"></i>
+
+                </button>
+
+            </div>
+
+            <!-- ITEMS -->
+            <div id="cartItems"
+                class="flex-1 overflow-y-auto p-5 flex flex-col gap-4"></div>
+
+            <!-- FOOTER -->
+            <div class="p-5 border-t">
+
+                <div class="flex items-center justify-between mb-5">
+
+                    <p class="text-xl font-medium">
+                        Total
                     </p>
-                </div>
-            </div>
 
-            <div class="container grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-
-            </div>
-
-            <!-- CART SIDEBAR -->
-            <div id="cartSidebar"
-                class="fixed top-0 left-0 w-[350px] h-screen bg-white shadow-2xl z-50 translate-x-[-100%] transition duration-300 flex flex-col">
-
-                <!-- HEADER -->
-                <div class="flex items-center justify-between p-5 border-b">
-
-                    <h2 class="text-3xl font-bold">
-                        Cart
-                    </h2>
-
-                    <button id="closeCart"
-                        class="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 transition flex items-center justify-center">
-
-                        <i class="fa-solid fa-xmark text-xl"></i>
-
-                    </button>
+                    <h3 class="text-3xl font-bold text-orange-500">
+                        $0.00
+                    </h3>
 
                 </div>
 
-                <!-- CART ITEMS -->
-                <div id="cartItems" class="flex-1 overflow-y-auto p-5 flex flex-col gap-4"></div>
+                <button
+                    class="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-2xl text-lg font-semibold transition">
 
-                <!-- FOOTER -->
-                <div class="p-5 border-t">
+                    Checkout
 
-                    <!-- TOTAL -->
-                    <div class="flex items-center justify-between mb-5">
-
-                        <p class="text-xl font-medium">
-                            Total
-                        </p>
-
-                        <h3 class="text-3xl font-bold text-orange-500">
-                            $0.00
-                        </h3>
-
-                    </div>
-
-                    <!-- CHECKOUT -->
-                    <button
-                        class="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-2xl text-lg font-semibold transition">
-
-                        Checkout
-
-                    </button>
-
-                </div>
+                </button>
 
             </div>
 
-        </main>
+        </div>
 
     </section>
 
